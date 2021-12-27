@@ -5,7 +5,7 @@ import { faCalendarAlt, faHome } from "@fortawesome/free-solid-svg-icons";
 const Banner = ({ title }) => <h1 className="display-1">{title}</h1>;
 
 const NavBar = () => (
-  <nav className="navbar navbar-fixed-bottom navbar-light bg-light">
+  <nav className="navbar fixed-bottom navbar-light bg-light">
     <NavLink to="">
       <FontAwesomeIcon size="lg" icon={faHome} color="darkgrey" />
     </NavLink>

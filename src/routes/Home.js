@@ -1,22 +1,22 @@
 const announcements = [
   {
-    id: "001",
+    "id": "00001",
     date: "August 4",
     data: "NYSL Fundraiser",
   },
   {
-    id: "002",
+    id: "00002",
     date: "August 16",
     data: "Season Kick-off: Meet the Teams",
   },
   {
-    id: "003",
+    id: "00003",
     date: "September 1",
     data: "First Game of the Season (Check Game Schedule for details)",
   },
 ];
 const Announcement = ({ announcement }) => (
-  <div>
+  <div key={announcement.id}>
     <p>{announcement.date}</p>
     <p>{announcement.data}</p>
   </div>

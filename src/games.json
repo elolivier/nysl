@@ -1,60 +1,69 @@
 {
-  "games": {
-    "2021_09_01_1": {
+  "games": [
+    {
+      "id": "2021_09_01_1",
       "date": "09/01",
       "time": "9:30",
       "teams": ["U1", "U4"],
       "location": "AJ Katzenmaier"
     },
-    "2021_09_01_2": {
+    {
+      "id": "2021_09_01_2",
       "date": "09/01",
       "time": "13:00",
       "teams": ["U3", "U2"],
       "location": "Greenbay"
     },
-    "2021_09_08_1": {
+    {
+      "id": "2021_09_08_1",
       "date": "09/08",
       "time": "9:30",
       "teams": ["U5", "U6"],
       "location": "Howard A Yeager"
     },
-    "2021_09_08_2": {
+    {
+      "id": "2021_09_08_2",
       "date": "09/08",
       "time": "13:00",
       "teams": ["U6", "U1"],
       "location": "Marjorie P Hart"
     },
-    "2021_09_15_1": {
+    {
+      "id": "2021_09_15_1",
       "date": "09/15",
       "time": "9:30",
       "teams": ["U2", "U4"],
       "location": "North"
     },
-    "2021_09_15_2": {
+    {
+      "id":"2021_09_15_2",
       "date": "09/15",
       "time": "13:00",
       "teams": ["U3", "U5"],
       "location": "AJ Katzenmaier"
     },
-    "2021_09_22_1": {
+    {
+      "id": "2021_09_22_1",
       "date": "09/22",
       "time": "9:30",
       "teams": ["U1", "U3"],
       "location": "South"
     },
-    "2021_09_22_2": {
+    {
+      "id": "2021_09_22_2",
       "date": "09/22",
       "time": "13:00",
       "teams": ["U2", "U6"],
       "location": "Howard A Yeager"
     },
-    "2021_09_29_1": {
+    {
+      "id": "2021_09_29_1",
       "date": "09/29",
       "time": "9:30",
       "teams": ["U4", "U5"],
       "location": "Greenbay"
     }
-  },
+  ],
   "locations": {
     "Katzenmaier": {
       "fullName": "AJ Katzenmaier Elementary",
