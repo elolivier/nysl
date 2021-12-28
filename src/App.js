@@ -5,6 +5,7 @@ import Layout from "./routes/Layout";
 import { Home } from "./routes/Home";
 import Games from "./routes/Games";
 import Game from "./routes/GameId";
+import Chat from "./routes/ChatId";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="games" element={<Games />} />
         <Route path="game/:gameId" element={<Game />} />
+        <Route path="chat/:chatId" element={<Chat />} />
       </Route>
     </Routes>
   );
