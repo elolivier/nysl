@@ -12,7 +12,7 @@ export const GameList = ({ games }) => (
     </thead>
     <tbody>
       {Object.values(games).map((game) => (
-        <Game game={game} />
+        <Game key={game.id} game={game} />
       ))}
     </tbody>
   </table>
