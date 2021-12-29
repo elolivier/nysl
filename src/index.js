@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
+import "./chat.css";
 
 ReactDOM.render(
   <BrowserRouter>
