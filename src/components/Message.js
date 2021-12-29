@@ -1,4 +1,5 @@
 import { useParams } from "react-router";
+import { ChatTime } from "../utilities/time";
 
 export const Messages = () => {
   const params = useParams();
@@ -13,7 +14,9 @@ export const Messages = () => {
             <div key={key} className={"outgoing_msg"}>
               <div className="sent_msg">
                 <p>{message.text}</p>
-                <span className="time_date"> 11:01 AM | Today</span>{" "}
+                <span className="time_date">
+                  <ChatTime time={message.timestamp} />
+                </span>
               </div>
             </div>
           );
@@ -21,16 +24,17 @@ export const Messages = () => {
           return (
             <div key={key} className="incoming_msg">
               <div className="incoming_msg_img">
-                {" "}
                 <img
                   src="https://ptetutorials.com/images/user-profile.png"
                   alt="sunil"
-                ></img>{" "}
+                ></img>
               </div>
               <div key={key} className={"received_msg"}>
                 <div className="received_withd_msg">
                   <p>{message.text}</p>
-                  <span className="time_date"> 11:01 AM | June 9</span>
+                  <span className="time_date">
+                    <ChatTime time={message.timestamp} />
+                  </span>
                 </div>
               </div>
             </div>
