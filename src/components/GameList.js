@@ -4,7 +4,7 @@ export const GameList = ({ games }) => (
   <table className="table table-striped table-responsive">
     <thead>
       <tr>
-        <th scope="col">SEPTEMBER</th>
+        <th scope="col">Date</th>
         <th>Teams</th>
         <th>Location</th>
         <th>Times</th>
