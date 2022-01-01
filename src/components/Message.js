@@ -1,10 +1,12 @@
-import { useParams } from "react-router";
 import { ChatTime } from "../utilities/time";
+import { useData } from "../utilities/firebase";
 
-export const Messages = () => {
-  const params = useParams();
-  const chatJson = require("../chat.json");
-  const chatMessages = chatJson.messages[params.chatId];
+export const Messages = ({ chatId }) => {
+  const [data, loading, error] = useData("/messages");
+
+  if (error) return <h1>{error}</h1>;
+  if (loading) return <h1>Loading messages...</h1>;
+  const chatMessages = data[chatId];
 
   return (
     <div>

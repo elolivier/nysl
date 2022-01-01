@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, onValue, ref, set } from "firebase/database";
+import { getDatabase, ref, onValue } from "firebase/database";
 import { useState, useEffect } from "react";
 import {
   getAuth,
@@ -10,22 +10,24 @@ import {
 } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAm4Ip6jI02ef2mmLa6hMw3PUDdSlSt1yc",
-  authDomain: "scheduler-35538.firebaseapp.com",
+  apiKey: "AIzaSyC21DgD3ikM-B90yf9z7Stfl-ZjvHx8tn8",
+  authDomain: "nysl-react-9a7a4.firebaseapp.com",
   databaseURL:
-    "https://scheduler-35538-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "scheduler-35538",
-  storageBucket: "scheduler-35538.appspot.com",
-  messagingSenderId: "870991158416",
-  appId: "1:870991158416:web:518d77060e90c8b1f90c15",
-  measurementId: "G-XKR2NGS9W4",
+    "https://nysl-react-9a7a4-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "nysl-react-9a7a4",
+  storageBucket: "nysl-react-9a7a4.appspot.com",
+  messagingSenderId: "607625356254",
+  appId: "1:607625356254:web:db08d02ffe004bc1bdf34f",
+  measurementId: "G-9PTH0HCJJB",
 };
+
+const app = initializeApp(firebaseConfig);
 
 export const signInWithGoogle = () => {
-  signInWithPopup(getAuth(firebase), new GoogleAuthProvider());
+  signInWithPopup(getAuth(app), new GoogleAuthProvider());
 };
 
-const firebaseSignOut = () => signOut(getAuth(firebase));
+const firebaseSignOut = () => signOut(getAuth(app));
 
 export { firebaseSignOut as signOut };
 
@@ -33,37 +35,25 @@ export const useUserState = () => {
   const [user, setUser] = useState();
 
   useEffect(() => {
-    onIdTokenChanged(getAuth(firebase), setUser);
+    onIdTokenChanged(getAuth(app), setUser);
   }, []);
 
   return [user];
 };
 
-const firebase = initializeApp(firebaseConfig);
-const database = getDatabase(firebase);
+const db = getDatabase();
 
-export const setData = (path, value) => set(ref(database, path), value);
-
-export const useData = (path, transform) => {
+export const useData = (path) => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
-
   useEffect(() => {
-    const dbRef = ref(database, path);
-    const devMode =
-      !process.env.NODE_ENV || process.env.NODE_ENV === "development";
-    if (devMode) {
-      console.log(`loading ${path}`);
-    }
+    const messagesRef = ref(db, "/messages");
     return onValue(
-      dbRef,
+      messagesRef,
       (snapshot) => {
         const val = snapshot.val();
-        if (devMode) {
-          console.log(val);
-        }
-        setData(transform ? transform(val) : val);
+        setData(val);
         setLoading(false);
         setError(null);
       },
@@ -73,7 +63,7 @@ export const useData = (path, transform) => {
         setError(error);
       }
     );
-  }, [path, transform]);
+  }, [path]);
 
   return [data, loading, error];
 };
