@@ -5,7 +5,7 @@ import {
   faHome,
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
-import logo from "../logo76.png";
+import logo from "../images/logo76.png";
 import {
   signInWithGoogle,
   signOut,
@@ -35,11 +35,12 @@ const usePathname = () => {
 const ChatButton = () => {
   const path = usePathname();
   const gameId = path.substring(6, path.length);
-  return(
-  <NavLink to={"chat/"+gameId}>
-    <FontAwesomeIcon size="lg" icon={faPaperPlane} color="darkgrey" />
-  </NavLink>
-)};
+  return (
+    <NavLink to={"chat/" + gameId}>
+      <FontAwesomeIcon size="lg" icon={faPaperPlane} color="darkgrey" />
+    </NavLink>
+  );
+};
 
 const Banner = ({ title }) => {
   const [user] = useUserState();

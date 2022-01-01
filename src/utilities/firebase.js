@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, onValue } from "firebase/database";
+import { getDatabase, ref, set, onValue } from "firebase/database";
 import { useState, useEffect } from "react";
 import {
   getAuth,
@@ -42,6 +42,10 @@ export const useUserState = () => {
 };
 
 const db = getDatabase();
+
+export const setData = (path, value) => {
+  set(ref(db, path), value);
+};
 
 export const useData = (path) => {
   const [data, setData] = useState();

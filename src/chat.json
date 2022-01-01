@@ -2,7 +2,7 @@
   "messages": {
     "2021_09_01_1": {
       "message-1": {
-        "author": "abc@example.com",
+        "author": "ernesto@ubiqum.com",
         "text": "Message1, Kevin!",
         "timestamp": 1640796918955
       },
@@ -17,7 +17,7 @@
         "timestamp": 1616713122679
       },
       "message-4": {
-        "author": "abc@example.com",
+        "author": "ernesto@ubiqum.com",
         "text": "great job guarding the goal, Kevin!",
         "timestamp": 1606713122679
       },
@@ -37,14 +37,14 @@
         "timestamp": 1623713122679
       },
       "message-8": {
-        "author": "abc@example.com",
+        "author": "ernesto@ubiqum.com",
         "text": "great job guarding the goal, Kevin!",
         "timestamp": 1622713122679
       }
     },
     "2021_09_01_2": {
       "message-1": {
-        "author": "abc@example.com",
+        "author": "ernesto@ubiqum.com",
         "text": "Message2, Kevin!",
         "timestamp": 1626713122679
       },
@@ -59,7 +59,7 @@
         "timestamp": 1626713122679
       },
       "message-4": {
-        "author": "abc@example.com",
+        "author": "ernesto@ubiqum.com",
         "text": "great job guarding the goal, Kevin!",
         "timestamp": 1626713122679
       },
@@ -79,14 +79,14 @@
         "timestamp": 1626713122679
       },
       "message-8": {
-        "author": "abc@example.com",
+        "author": "ernesto@ubiqum.com",
         "text": "great job guarding the goal, Kevin!",
         "timestamp": 1626713122679
       }
     },
     "2021_09_08_1": {
       "message-1": {
-        "author": "abc@example.com",
+        "author": "ernesto@ubiqum.com",
         "text": "Message3, Kevin!",
         "timestamp": 1640796918955
       },
@@ -101,7 +101,7 @@
         "timestamp": 1626713122679
       },
       "message-4": {
-        "author": "abc@example.com",
+        "author": "ernesto@ubiqum.com",
         "text": "great job guarding the goal, Kevin!",
         "timestamp": 1640707003000
       },
@@ -121,14 +121,14 @@
         "timestamp": 1640706343000
       },
       "message-8": {
-        "author": "abc@example.com",
+        "author": "ernesto@ubiqum.com",
         "text": "great job guarding the goal, Pete!",
         "timestamp": 1640796918995
       }
     },
     "2021_09_08_2": {
       "message-1": {
-        "author": "abc@example.com",
+        "author": "ernesto@ubiqum.com",
         "text": "Message4, Kevin!",
         "timestamp": 1626713122679
       },
@@ -143,7 +143,7 @@
         "timestamp": 1626713122679
       },
       "message-4": {
-        "author": "abc@example.com",
+        "author": "ernesto@ubiqum.com",
         "text": "great job guarding the goal, Kevin!",
         "timestamp": 1626713122679
       },
@@ -163,14 +163,14 @@
         "timestamp": 1626713122679
       },
       "message-8": {
-        "author": "abc@example.com",
+        "author": "ernesto@ubiqum.com",
         "text": "great job guarding the goal, Kevin!",
         "timestamp": 1626713122679
       }
     },
     "2021_09_15_1": {
       "message-1": {
-        "author": "abc@example.com",
+        "author": "ernesto@ubiqum.com",
         "text": "Message5, Kevin!",
         "timestamp": 1626713122679
       },
@@ -185,7 +185,7 @@
         "timestamp": 1626713122679
       },
       "message-4": {
-        "author": "abc@example.com",
+        "author": "ernesto@ubiqum.com",
         "text": "great job guarding the goal, Kevin!",
         "timestamp": 1626713122679
       },
@@ -205,7 +205,7 @@
         "timestamp": 1626713122679
       },
       "message-8": {
-        "author": "abc@example.com",
+        "author": "ernesto@ubiqum.com",
         "text": "great job guarding the goal, Kevin!",
         "timestamp": 1626713122679
       }
