@@ -1,14 +1,29 @@
 import { ChatTime } from "../utilities/time";
 import { setData, useData, useUserState } from "../utilities/firebase";
 
-let messageNumber = 0;
+let messageNumber = 1;
 
 export const message = (chatId, message, user) => {
+  if (user === null) {
+    return alert("Please sign in to be able to send messages");
+  }
   setData(`/messages/${chatId}/${"message-" + messageNumber}`, {
     author: user.email,
     text: message,
     timestamp: Date.now(),
   });
+};
+
+const sortKeys = (obj) => {
+  return Object.assign(
+    ...Object.entries(obj)
+      .sort()
+      .map(([key, value]) => {
+        return {
+          [key]: value,
+        };
+      })
+  );
 };
 
 export const Messages = ({ chatId }) => {
@@ -18,11 +33,14 @@ export const Messages = ({ chatId }) => {
   if (error) return <h1>{error}</h1>;
   if (loading) return <h1>Loading messages...</h1>;
   const chatMessages = data[chatId];
+  if (chatMessages === undefined || user === null) {
+    return <></>;
+  }
   messageNumber = Object.keys(chatMessages).length + 1;
-
+  const orderedChatMessages = sortKeys(chatMessages);
   return (
     <div>
-      {Object.entries(chatMessages).map(([key, message]) => {
+      {Object.entries(orderedChatMessages).map(([key, message]) => {
         if (message.author === user.email) {
           return (
             <div key={key} className={"outgoing_msg"}>
