@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, onValue } from "firebase/database";
+import { getDownloadURL, getStorage, ref as storageRef, uploadBytes } from "firebase/storage";
 import { useState, useEffect } from "react";
 import {
   getAuth,
@@ -42,6 +43,20 @@ export const useUserState = () => {
 };
 
 const db = getDatabase();
+export const storage = getStorage();
+
+export const saveImage = (file) => {
+  const photoRef = storageRef(storage, "images/"+file.name);
+  const url = uploadBytes(photoRef, file).then((snapshot) => {
+    console.log('Uploaded a file!');
+    const getURL = getDownloadURL(snapshot.ref).then((downloadURL) => {
+      console.log('File available at', downloadURL);
+      return downloadURL
+    });
+    return getURL
+  });
+  return url
+};
 
 export const setData = (path, value) => {
   set(ref(db, path), value);
