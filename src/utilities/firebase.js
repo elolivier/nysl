@@ -45,17 +45,19 @@ export const useUserState = () => {
 const db = getDatabase();
 export const storage = getStorage();
 
-export const saveImage = (file) => {
+export const saveImage = (file, user, gameId, pictureNumber) => {
   const photoRef = storageRef(storage, "images/"+file.name);
-  const url = uploadBytes(photoRef, file).then((snapshot) => {
+  uploadBytes(photoRef, file).then((snapshot) => {
     console.log('Uploaded a file!');
-    const getURL = getDownloadURL(snapshot.ref).then((downloadURL) => {
+    getDownloadURL(snapshot.ref).then((downloadURL) => {
+      setData(`/pictures/${gameId}/${"picture-" + pictureNumber}`, {
+        author: user.email,
+        url: downloadURL,
+        timestamp: Date.now(),
+      });
       console.log('File available at', downloadURL);
-      return downloadURL
     });
-    return getURL
   });
-  return url
 };
 
 export const setData = (path, value) => {
@@ -67,7 +69,7 @@ export const useData = (path) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
   useEffect(() => {
-    const messagesRef = ref(db, "/messages");
+    const messagesRef = ref(db, path);
     return onValue(
       messagesRef,
       (snapshot) => {
