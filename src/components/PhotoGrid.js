@@ -1,11 +1,18 @@
 export const PhotoGrid = (pictures) => {
+  if (pictures.pictures === null) {
+    return <></>;
+  }
   const imagesToRender = pictures.pictures;
-  console.log(pictures)
+  console.log(imagesToRender)
   return (
-    <>
-      <div>
-        {imagesToRender['picture-1'].author}
-      </div>
-    </>
+    <div className="row">
+      {Object.entries(imagesToRender).map(([key, image]) => {
+        return (
+          <div>
+            <img key={key} src={image.url} alt={image.author}></img>
+          </div>
+        )
+      })}
+    </div>
   )
 }

@@ -13,9 +13,6 @@ export const PhotoList = () => {
 
   if (error) return <h1>{error}</h1>;
   if (loading) return <h1>Loading pictures...</h1>;
-  if (data === undefined || user === null) {
-    return <></>;
-  }
 
   const handleFile = async (evt) => {
     const file = evt.target.files[0];
