@@ -15,7 +15,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="games" element={<Games />} />
         <Route path="game/:gameId" element={<Game />} />
-        <Route path="chat/:chatId" element={<Chat />} />
+        <Route path="chat/:gameId" element={<Chat />} />
         <Route path="photos/:gameId" element={<Photos />} />
       </Route>
     </Routes>

@@ -3,11 +3,11 @@ import { setData, useData, useUserState } from "../utilities/firebase";
 
 let messageNumber = 1;
 
-export const message = (chatId, message, user) => {
+export const message = (gameId, message, user) => {
   if (user === null) {
     return alert("Please sign in to be able to send messages");
   }
-  setData(`/messages/${chatId}/${"message-" + messageNumber}`, {
+  setData(`/messages/${gameId}/${"message-" + messageNumber}`, {
     author: user.email,
     text: message,
     timestamp: Date.now(),
@@ -26,13 +26,13 @@ const sortKeys = (obj) => {
   );
 };
 
-export const Messages = ({ chatId }) => {
+export const Messages = ({ gameId }) => {
   const [data, loading, error] = useData("/messages");
   const user = useUserState()[0];
 
   if (error) return <h1>{error}</h1>;
   if (loading) return <h1>Loading messages...</h1>;
-  const chatMessages = data[chatId];
+  const chatMessages = data[gameId];
   if (chatMessages === undefined || user === null) {
     return <></>;
   }

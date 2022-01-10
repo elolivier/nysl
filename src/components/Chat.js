@@ -11,7 +11,7 @@ import { useUserState } from "../utilities/firebase";
 
 const Chat = () => {
   const params = useParams();
-  const gameId = params.chatId;
+  const gameId = params.gameId;
   const [input, setInput] = useState("");
   const user = useUserState()[0];
 
@@ -25,7 +25,7 @@ const Chat = () => {
         <div className="inbox_msg">
           <div className="mesgs">
             <div className="msg_history">
-              <Messages chatId={gameId} />
+              <Messages gameId={gameId} />
             </div>
             <div className="type_msg">
               <div className="input_msg_write">
