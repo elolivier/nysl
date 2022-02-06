@@ -21,7 +21,7 @@ Game.propTypes = {
   game: PropTypes.shape({
     id: PropTypes.string,
     date: PropTypes.string,
-    teams: PropTypes.string,
+    teams: PropTypes.arrayOf(PropTypes.string),
     location: PropTypes.string,
     time: PropTypes.string,
   }).isRequired,

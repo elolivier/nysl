@@ -21,7 +21,7 @@ function GameList({ games }) {
   );
 }
 GameList.propTypes = {
-  games: PropTypes.string.isRequired,
+  games: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default GameList;

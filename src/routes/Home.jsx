@@ -42,7 +42,7 @@ function AnnouncementList({ announcementList }) {
   );
 }
 AnnouncementList.propTypes = {
-  announcementList: PropTypes.arrayOf(Announcement).isRequired,
+  announcementList: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 function Home() {
